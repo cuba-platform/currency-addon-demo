@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="currencyaddondemo$TradeItem.browse"
+            template="com/company/addon/currency_demo/web/tradeitem/trade-item-browse.xml"/>
+    <screen id="currencyaddondemo$TradeItem.edit"
+            template="com/company/addon/currency_demo/web/tradeitem/trade-item-edit.xml"/>
+</screen-config>

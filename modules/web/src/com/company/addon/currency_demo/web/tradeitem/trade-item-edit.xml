@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.addon.currency_demo.web.tradeitem.TradeItemEdit"
+        datasource="tradeItemDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.addon.currency_demo.web.tradeitem">
+    <dsContext>
+        <datasource id="tradeItemDs"
+                    class="com.company.addon.currency_demo.entity.TradeItem"
+                    view="tradeItem-with-sell-amount"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="tradeItemDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="buyDate"/>
+                <field property="buyAmount"/>
+                <field property="sellAmount">
+                    <currencyAddonField datasource="tradeItemDs"
+                                        property="sellAmount"/>
+                </field>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

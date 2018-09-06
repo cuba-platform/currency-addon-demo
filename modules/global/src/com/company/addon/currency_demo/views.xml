@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.addon.currency_demo.entity.TradeItem"
+          extends="_local"
+          name="tradeItem-with-sell-amount">
+        <property name="sellAmount"
+                  view="_minimal">
+            <property name="currency"
+                      view="_minimal">
+                <property name="code"/>
+                <property name="symbol"/>
+            </property>
+            <property name="date"/>
+        </property>
+    </view>
+</views>
