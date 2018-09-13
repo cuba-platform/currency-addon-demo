@@ -10,7 +10,6 @@ create table CURRENCYADDONDEMO_TRADE_ITEM (
     DELETED_BY varchar(50),
     --
     NAME varchar(255) not null,
-    BUY_DATE date not null,
     BUY_AMOUNT decimal(19, 2) not null,
     SELL_AMOUNT_ID varchar(36) not null,
     --

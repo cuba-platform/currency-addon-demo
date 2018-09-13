@@ -8,7 +8,7 @@
     <dsContext>
         <groupDatasource id="tradeItemsDs"
                          class="com.company.addon.currency_demo.entity.TradeItem"
-                         view="tradeItem-with-sell-amount">
+                         view="tradeItem-with-sell-price">
             <query>
                 <![CDATA[select e from currencyaddondemo$TradeItem e]]>
             </query>
@@ -32,7 +32,6 @@
             </actions>
             <columns>
                 <column id="name"/>
-                <column id="buyDate"/>
                 <column id="buyAmount"/>
                 <column id="sellAmount"/>
             </columns>

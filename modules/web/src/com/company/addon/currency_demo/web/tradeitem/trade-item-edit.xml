@@ -8,7 +8,7 @@
     <dsContext>
         <datasource id="tradeItemDs"
                     class="com.company.addon.currency_demo.entity.TradeItem"
-                    view="tradeItem-with-sell-amount"/>
+                    view="tradeItem-with-sell-price"/>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -18,12 +18,8 @@
                     datasource="tradeItemDs">
             <column width="250px">
                 <field property="name"/>
-                <field property="buyDate"/>
                 <field property="buyAmount"/>
-                <field property="sellAmount">
-                    <currencyAddonField datasource="tradeItemDs"
-                                        property="sellAmount"/>
-                </field>
+                <field property="sellAmount"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

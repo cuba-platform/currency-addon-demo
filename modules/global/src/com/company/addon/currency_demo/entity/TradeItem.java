@@ -1,22 +1,14 @@
 package com.company.addon.currency_demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import com.haulmont.addon.currency.entity.CurrencyValueEntity;
+import com.haulmont.addon.currency.entity.Currency;
+import com.haulmont.chile.core.annotations.NamePattern;
+import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.CurrencyValue;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-
-import com.haulmont.addon.currency.entity.annotation.CurrencyDate;
-import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.chile.core.annotations.NamePattern;
-import com.haulmont.cuba.core.entity.annotation.CurrencyValue;
 
 @NamePattern("%s|name")
 @Table(name = "CURRENCYADDONDEMO_TRADE_ITEM")
@@ -28,21 +20,15 @@ public class TradeItem extends StandardEntity {
     @Column(name = "NAME", nullable = false)
     protected String name;
 
-    @Temporal(TemporalType.DATE)
-    @NotNull
-    @Column(name = "BUY_DATE", nullable = false)
-    protected Date buyDate;
-
     @NotNull
     @Column(name = "BUY_AMOUNT", nullable = false)
     @CurrencyValue(currency = "USD")
-    @CurrencyDate("buyDate")
     protected BigDecimal buyAmount;
 
     @NotNull
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "SELL_AMOUNT_ID")
-    protected CurrencyValueEntity sellAmount;
+    protected Currency sellAmount;
 
     public void setName(String name) {
         this.name = name;
@@ -50,14 +36,6 @@ public class TradeItem extends StandardEntity {
 
     public String getName() {
         return name;
-    }
-
-    public void setBuyDate(Date buyDate) {
-        this.buyDate = buyDate;
-    }
-
-    public Date getBuyDate() {
-        return buyDate;
     }
 
     public void setBuyAmount(BigDecimal buyAmount) {
@@ -68,11 +46,11 @@ public class TradeItem extends StandardEntity {
         return buyAmount;
     }
 
-    public void setSellAmount(CurrencyValueEntity sellAmount) {
+    public void setSellAmount(Currency sellAmount) {
         this.sellAmount = sellAmount;
     }
 
-    public CurrencyValueEntity getSellAmount() {
+    public Currency getSellAmount() {
         return sellAmount;
     }
 
