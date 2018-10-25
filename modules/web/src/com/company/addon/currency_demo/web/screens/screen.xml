@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://caption"
+        class="com.company.addon.currency_demo.web.screens.Screen"
+        messagesPack="com.company.addon.currency_demo.web.screens">
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <cssLayout>
+            <currencyAddonField id="currField"/>
+            <buttonsPanel>
+                <button id="change-currency"
+                        caption="msg://change_currency"
+                        invoke="onChange_currencyClick"/>
+                <button id="get-state-btn"
+                        caption="msg://get_state"
+                        invoke="onGet_state_btnClick"/>
+            </buttonsPanel>
+        </cssLayout>
+    </layout>
+</window>

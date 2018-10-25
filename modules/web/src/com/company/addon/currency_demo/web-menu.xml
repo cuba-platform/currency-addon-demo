@@ -3,5 +3,6 @@
     <menu id="application-currencyaddondemo"
           insertBefore="administration">
         <item screen="currencyaddondemo$TradeItem.browse"/>
+        <item screen="screen"/>
     </menu>
 </menu-config>

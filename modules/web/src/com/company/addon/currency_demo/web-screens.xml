@@ -4,4 +4,6 @@
             template="com/company/addon/currency_demo/web/tradeitem/trade-item-browse.xml"/>
     <screen id="currencyaddondemo$TradeItem.edit"
             template="com/company/addon/currency_demo/web/tradeitem/trade-item-edit.xml"/>
+    <screen id="screen"
+            template="com/company/addon/currency_demo/web/screens/screen.xml"/>
 </screen-config>

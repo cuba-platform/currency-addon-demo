@@ -2,13 +2,14 @@
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
     <view class="com.company.addon.currency_demo.entity.TradeItem"
           extends="_local"
-          name="tradeItem-with-sell-amount">
+          name="tradeItem-with-sell-price">
         <property name="sellAmount"
                   view="_minimal">
             <property name="currency"
                       view="_minimal">
                 <property name="code"/>
                 <property name="symbol"/>
+                <property name="precision"/>
             </property>
             <property name="date"/>
         </property>
