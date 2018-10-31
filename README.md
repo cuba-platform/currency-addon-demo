@@ -1,6 +1,9 @@
 # currency-addon-demo
-Demo of CUBA [currency-addon](https://github.com/cuba-platform/currency-addon)
 
+This project is example of using [currency-addon](https://github.com/cuba-platform/currency-addon) component.
+
+To view example we can create/edit entity Trade Item on screen **Trade Items**.
+On create/edit screen we can exchange **sell amount** of **Trade Item** between USD/EUR/BTC/RUB currencies. 
 
 ## Project Customization
 
