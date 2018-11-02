@@ -6,7 +6,7 @@
     <dialogMode height="600"
                 width="800"/>
     <layout>
-        <cssLayout>
+        <hbox spacing="true">
             <currencyAddonField id="currField"/>
             <buttonsPanel>
                 <button id="change-currency"
@@ -16,6 +16,6 @@
                         caption="msg://get_state"
                         invoke="onGet_state_btnClick"/>
             </buttonsPanel>
-        </cssLayout>
+        </hbox>
     </layout>
 </window>
