@@ -7,7 +7,7 @@
                 width="800"/>
     <layout>
         <hbox spacing="true">
-            <currencyAddonField id="currField"/>
+            <currencyAddonField id="currField" currencyButtonPosition="LEFT"/>
             <buttonsPanel>
                 <button id="change-currency"
                         caption="msg://change_currency"

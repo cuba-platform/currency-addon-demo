@@ -3,11 +3,9 @@ package com.company.addon.currency_demo.entity;
 import com.haulmont.addon.currency.entity.Currency;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.CurrencyValue;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @NamePattern("%s|name")
@@ -20,15 +18,33 @@ public class TradeItem extends StandardEntity {
     @Column(name = "NAME", nullable = false)
     protected String name;
 
+    @Temporal(TemporalType.DATE)
     @NotNull
-    @Column(name = "BUY_AMOUNT", nullable = false)
-    @CurrencyValue(currency = "USD")
-    protected BigDecimal buyAmount;
+    @Column(name = "DATE_", nullable = false)
+    protected Date date;
 
     @NotNull
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "SELL_AMOUNT_ID")
-    protected Currency sellAmount;
+    @JoinColumn(name = "COST_ID")
+    protected Currency cost;
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+
+    public void setCost(Currency cost) {
+        this.cost = cost;
+    }
+
+    public Currency getCost() {
+        return cost;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -36,22 +52,6 @@ public class TradeItem extends StandardEntity {
 
     public String getName() {
         return name;
-    }
-
-    public void setBuyAmount(BigDecimal buyAmount) {
-        this.buyAmount = buyAmount;
-    }
-
-    public BigDecimal getBuyAmount() {
-        return buyAmount;
-    }
-
-    public void setSellAmount(Currency sellAmount) {
-        this.sellAmount = sellAmount;
-    }
-
-    public Currency getSellAmount() {
-        return sellAmount;
     }
 
 

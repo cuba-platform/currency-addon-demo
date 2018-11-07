@@ -18,8 +18,8 @@
                     datasource="tradeItemDs">
             <column width="250px">
                 <field property="name"/>
-                <field property="buyAmount"/>
-                <field property="sellAmount"/>
+                <field property="date"/>
+                <field property="cost"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"
